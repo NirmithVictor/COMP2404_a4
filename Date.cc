@@ -60,11 +60,11 @@ void Date::add(int d){
 			year+=1;
 			month=month-12;
 		}
-		cout<<"DAY IS GREATER THAN THE LIMIT"<<endl;
+		//cout<<"DAY IS GREATER THAN THE LIMIT"<<endl;
 	}
-	cout<<year<<endl;
-	cout<<month<<endl;
-	cout<<day<<endl;
+	//cout<<year<<endl;
+	//cout<<month<<endl;
+	//cout<<day<<endl;
 }
 
 void Date::setDate(int d,int m,int y)
