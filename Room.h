@@ -6,9 +6,18 @@
 class Room
 {
   public:
+	Room(ReqRoomType,int,float);
+	~Room();
+	string getType();
+	float getRate();
+	int getRoom();
+	void print();
+	void computePoints(int&);
 	
   private:
-  	
+  	ReqRoomType type;
+  	int roomN;
+  	float rate;
 };
 
 #endif

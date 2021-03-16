@@ -4,9 +4,22 @@ using namespace std;
 
 #include "Date.h"
 #include "Guest.h"
+#include "Room.h"
 
 int main()
 {
+  //room testers
+  Room r(C_REG, 501, 1500);
+  Room r1(C_PREM, 501, 1500);
+  Room r2(C_SUITE, 501, 1500);
+  r.print();
+  r1.print();
+  r2.print();
+  cout<<endl;
+  return 0;
+}
+
+/*
   Date d1(28, 2, 2012);
   Date d3(28,12,2013);
   d1.print();
@@ -18,6 +31,7 @@ int main()
   cout<<"\nAFTER CHANGES"<<endl;
   d1.add(20);
   d3.add(31);
+  d3.add(12);
   d1.print();
   d3.print();
   cout<<endl;
@@ -28,5 +42,4 @@ int main()
   g.print();
   g1.print();
   cout<<endl;
-  return 0;
-}
+  */
