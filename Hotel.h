@@ -17,6 +17,7 @@ class Hotel
   	void printGuest();
   	void printRooms();
   	bool findGuest(string,Guest**);
+  	//bool findGuest(string);
   private:
 	string Hname;
 	//collection of guests stored as a statically alloacted primitive array of guest pointers

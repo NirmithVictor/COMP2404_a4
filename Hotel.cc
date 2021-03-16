@@ -48,3 +48,26 @@ void Hotel::printGuest(){
 void Hotel::printRooms(){
 	rooms.print();
 }
+
+bool Hotel::findGuest(string n,Guest** g){
+	cout<<n<<endl;
+	for(int i=0;i<g_count;i++){
+		if(n==arrGuest[i]->getName()){
+			cout<<"FOUND GUEST\n";
+			*g=arrGuest[i];
+			return true;
+		}
+	}
+	cout<<"GUEST NOT FOUND\n";
+	return false;
+}
+
+
+
+
+
+
+
+
+
+

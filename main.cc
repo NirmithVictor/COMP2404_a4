@@ -13,12 +13,22 @@ int main()
   //Guest g1("Goodwin");
   //testers for hotel 
   Hotel *h=new Hotel("Victorian Hotel");
+  cout<<endl;
   h->addGuest(new Guest("Nirmith",true));
   h->addGuest(new Guest("Goodwin"));
   h->addRoom(new Room(C_SUITE, 501, 1500));
   h->addRoom(new Room(C_PREM, 410, 700));
   h->printGuest();
+  cout<<endl;
   h->printRooms();
+  Guest *g;
+  if(h->findGuest("Nirmith",&g)){
+  	g->print();
+  }
+  if(h->findGuest("Jesus",&g)){
+  	g->print();
+  }
+  //g->print();
   cout<<endl;
   delete h;
   return 0;
