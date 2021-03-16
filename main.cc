@@ -5,9 +5,23 @@ using namespace std;
 #include "Date.h"
 #include "Guest.h"
 #include "Room.h"
+#include "Hotel.h"
 
 int main()
 {
+  Guest g("Nirmith",true);
+  Guest g1("Goodwin");
+  
+  Hotel *h=new Hotel("Victorian Hotel");
+  h->addGuest(&g);
+  h->addGuest(&g1);
+  h->printGuest();
+  delete h;
+  return 0;
+  
+}
+
+/*
   //room testers
   Room r(C_REG, 501, 1500);
   Room r1(C_PREM, 501, 1500);
@@ -22,10 +36,7 @@ int main()
   cout<<a<<endl;
   r1.print();
   r2.print();
-  cout<<endl;
-  return 0;
-}
-
+  cout<<endl;*/
 /*
   Date d1(28, 2, 2012);
   Date d3(28,12,2013);

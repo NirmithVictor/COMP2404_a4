@@ -4,7 +4,7 @@
 class Guest
 {
   public:
-	Guest(string,bool);
+	Guest(string,bool=false);
 	~Guest();
 	bool getPremium();
 	string getName();
