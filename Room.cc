@@ -53,11 +53,14 @@ void Room::print(){
 void Room::computePoints(int& pts){
 	if(type==0){
 		pts=0.1*rate;
+		cout<<pts<<endl;
 	}
 	else if(type==1){
 		pts=0.15*rate;
+		cout<<pts<<endl;
 	}
 	else if(type==2){
 		pts=0.2*rate;
+		cout<<pts<<endl;
 	}
 }

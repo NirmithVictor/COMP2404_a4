@@ -13,6 +13,10 @@ int main()
   Room r1(C_PREM, 501, 1500);
   Room r2(C_SUITE, 501, 1500);
   r.print();
+  int a;
+  r.computePoints(a);
+  r1.computePoints(a);
+  r2.computePoints(a);
   r1.print();
   r2.print();
   cout<<endl;
