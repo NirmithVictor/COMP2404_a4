@@ -15,8 +15,11 @@ int main()
   r.print();
   int a;
   r.computePoints(a);
+  cout<<a<<endl;
   r1.computePoints(a);
+  cout<<a<<endl;
   r2.computePoints(a);
+  cout<<a<<endl;
   r1.print();
   r2.print();
   cout<<endl;
