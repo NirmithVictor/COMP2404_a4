@@ -22,7 +22,7 @@ class Hotel
 	//collection of guests stored as a statically alloacted primitive array of guest pointers
 	Guest* arrGuest[MAX_SIZE];
 	int g_count;
-	RoomArray* rooms;
+	RoomArray rooms;
 	//the reservation manager that will handle all the reservations for the hotel, stored as a ResManager pointer; this class is described in a later step
 };
 

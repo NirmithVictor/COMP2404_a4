@@ -9,13 +9,17 @@ using namespace std;
 
 int main()
 {
-  Guest g("Nirmith",true);
-  Guest g1("Goodwin");
-  
+  //Guest g("Nirmith",true);
+  //Guest g1("Goodwin");
+  //testers for hotel 
   Hotel *h=new Hotel("Victorian Hotel");
-  h->addGuest(&g);
-  h->addGuest(&g1);
+  h->addGuest(new Guest("Nirmith",true));
+  h->addGuest(new Guest("Goodwin"));
+  h->addRoom(new Room(C_SUITE, 501, 1500));
+  h->addRoom(new Room(C_PREM, 410, 700));
   h->printGuest();
+  h->printRooms();
+  cout<<endl;
   delete h;
   return 0;
   

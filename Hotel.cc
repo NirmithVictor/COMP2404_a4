@@ -10,10 +10,15 @@ Hotel::Hotel(string n):Hname(n),g_count(0){
 }
 Hotel::~Hotel(){
 	cout<<Hname<<" destroyed"<<endl;
+	//dealloacte the the guest array details
+	for(int i=0;i<g_count;i++){
+		cout<<arrGuest[i]->getName()<<" destroyed"<<endl;
+		delete arrGuest[i];
+	}
 }
 
 RoomArray Hotel::getRooms(){
-	return *rooms;
+	return rooms;
 }
 
 void Hotel::addGuest(Guest* g){
@@ -31,7 +36,7 @@ void Hotel::addGuest(Guest* g){
 }
 
 void Hotel::addRoom(Room* a){
-	rooms->add(a);
+	rooms.add(a);
 }
 
 void Hotel::printGuest(){
@@ -41,5 +46,5 @@ void Hotel::printGuest(){
 }
 
 void Hotel::printRooms(){
-	rooms->print();
+	rooms.print();
 }
