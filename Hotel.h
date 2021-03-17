@@ -25,6 +25,7 @@ class Hotel
 	int g_count;
 	RoomArray rooms;
 	//the reservation manager that will handle all the reservations for the hotel, stored as a ResManager pointer; this class is described in a later step
+	//ResManager* res;
 };
 
 #endif

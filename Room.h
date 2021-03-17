@@ -6,7 +6,7 @@
 class Room
 {
   public:
-	Room(ReqRoomType,int,float);
+	Room(ReqRoomType,int=0,float=0);
 	~Room();
 	string getType();
 	float getRate();

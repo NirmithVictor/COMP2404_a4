@@ -5,6 +5,7 @@ using namespace std;
 
 #include "Hotel.h"
 
+//,ResManager* a
 Hotel::Hotel(string n):Hname(n),g_count(0){
 	cout<<Hname<<endl;
 }

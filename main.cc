@@ -1,18 +1,27 @@
 #include <iostream>
 using namespace std;
 #include <string>
-
+/*
 #include "Date.h"
 #include "Guest.h"
 #include "Room.h"
 #include "Hotel.h"
+*/
 
+#include "Reservation.h"
 int main()
 {
+  Reservation* a=new Reservation("Ben",2021, 5, 11,  4, C_PREM);
+  delete a;
+  return 0;
+  
+}
+
+  //tester for temporary hotel
   //Guest g("Nirmith",true);
   //Guest g1("Goodwin");
   //testers for hotel 
-  Hotel *h=new Hotel("Victorian Hotel");
+  /*Hotel *h=new Hotel("Victorian Hotel");
   cout<<endl;
   h->addGuest(new Guest("Nirmith",true));
   h->addGuest(new Guest("Goodwin"));
@@ -30,11 +39,7 @@ int main()
   }
   //g->print();
   cout<<endl;
-  delete h;
-  return 0;
-  
-}
-
+  delete h;*/
 /*
   //room testers
   Room r(C_REG, 501, 1500);

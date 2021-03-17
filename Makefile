@@ -1,5 +1,5 @@
-p3:	main.o Date.o Guest.o Room.o Hotel.o RoomArray.o
-	g++ -o p3 main.o Date.o Guest.o Room.o Hotel.o RoomArray.o
+p3:	main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o
+	g++ -o p3 main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o
 	
 main.o:	main.cc Date.h
 	g++ -c main.cc
@@ -18,6 +18,9 @@ Hotel.o: Hotel.h Hotel.cc
 
 RoomArray.o: RoomArray.cc RoomArray.h
 	g++ -c RoomArray.cc
+
+Reservation.o: Reservation.cc Reservation.h
+	g++ -c Reservation.cc
 	
 clean:
 	rm -f *.o p3
