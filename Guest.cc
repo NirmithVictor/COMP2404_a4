@@ -8,7 +8,7 @@ using namespace std;
 Guest::Guest(string a,bool b):name(a),premium(b),pts(0){}
 
 Guest::~Guest(){
-	//cout<<"Name: "<<name<<" destroyed"<<endl;
+	cout<<"Guest Name: "<<name<<" destroyed"<<endl;
 }
 
 string Guest::getName(){

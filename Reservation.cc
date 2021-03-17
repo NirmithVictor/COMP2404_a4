@@ -5,16 +5,61 @@ using namespace std;
 
 #include "Reservation.h"
 
-Reservation::Reservation(string n,int y,int m,int d,int s,ReqRoomType r){
-	cout<<n<<endl;
-	da=new Date(d,m,y);
-	g=new Guest(n);
-	room=new Room(r);
+Reservation::Reservation(Guest* a,Room* b,Date* arr,int s){
+	da=arr;
+	g=a;
+	room=b;
+	stay=s;
+	charge=room->getRate()*stay;
 }
 
 Reservation::~Reservation(){
-	cout<<g->getName()<<" destroyed"<<endl;
+	cout<<"Reservation is destroyed"<<endl;
 	delete da;
 	delete g;
 	delete room;
 }
+
+int Reservation::getStay(){
+	return stay;
+}
+
+float Reservation::getCharge(){
+	return charge;
+}
+
+//a getter for date perhaps
+
+Date& Reservation::getDate(){
+	//da->print();
+	return *da;
+}
+
+
+
+bool Reservation::lessThan(Reservation* l){
+	if(da->lessThan(l->getDate())){
+		return true;
+	}
+	return false;
+}
+
+	//cout<<"Guest: ";
+	//g->print();
+	//cout<<"Room: ";
+	//room->print();
+	//cout<<"Date: ";
+	//da->print();
+	//cout<<"Charge: "<<charge<<endl<<endl;
+
+void Reservation::print(){
+	cout<<"-- Guest: "<<g->getName()<<" :Room Number: "<<room->getRoom()<<" Arrival Date: ";
+	da->print();
+	cout<<"; stay:"<<stay<<"; total: $"<<charge<<endl;
+}
+
+
+
+
+
+

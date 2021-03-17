@@ -78,7 +78,7 @@ void Date::print()
 {
   cout<<setfill('0')<<setw(4)<<year<<"-"
       <<setfill('0')<<setw(2)<<month<<"-"
-      <<setfill('0')<<setw(2)<<day<<endl;
+      <<setfill('0')<<setw(2)<<day;
 }
 
 int Date::lastDayInMonth()

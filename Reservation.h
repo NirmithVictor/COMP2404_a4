@@ -10,12 +10,12 @@ class Reservation
 {
   public:
   //ReqRoomType
-    Reservation(string,int,int,int,int,ReqRoomType);
+    Reservation(Guest*,Room*,Date*,int);
     ~Reservation();
     //add later if necessary
     int getStay();
     float getCharge();
-    
+    Date& getDate();
     bool lessThan(Reservation*);
     void print();
     

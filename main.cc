@@ -11,8 +11,30 @@ using namespace std;
 #include "Reservation.h"
 int main()
 {
-  Reservation* a=new Reservation("Ben",2021, 5, 11,  4, C_PREM);
+  Guest *g=new Guest("Nirmith",true);
+  Room *r=new Room(C_REG, 501, 1500);
+  Date *d=new Date(28, 3, 2012);
+  Reservation* a=new Reservation(g,r,d,6);
+  cout<<endl;
+  Guest *g1=new Guest("Nirmith",false);
+  Room *r1=new Room(C_REG, 501, 1500);
+  Date *d1=new Date(26, 3, 2012);
+  Reservation* b=new Reservation(g1,r1,d1,7);
+  //cout<<b->getCharge()<<endl;
+  //Date *e=new Date(b->getDate());
+  //e->print();
+  //delete e;
+  //if(b->lessThan(a)){
+  //	cout<<"B is lesser than a"<<endl;
+  //}
+  //else{
+  //	cout<<"A lesser than B"<<endl;
+  //}
+  a->print();
+  b->print();
+  cout<<endl;
   delete a;
+  delete b;
   return 0;
   
 }
