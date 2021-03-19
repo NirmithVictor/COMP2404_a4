@@ -10,9 +10,12 @@ class Recorder
 	Recorder(string="");
 	void printRecords();
 	virtual void update(Reservation*)=0;
+  
+  protected:
+	vector<string> record;
   private:
 	string Recorder_name;
-	vector<string> record;
+	//vector<string> record;
 };
 
 #endif

@@ -1,5 +1,5 @@
-p3:	main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o Recorder.o StayRecorder.o
-	g++ -o p3 main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o Recorder.o StayRecorder.o
+p3:	main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o Recorder.o StayRecorder.o GuestRecorder.o
+	g++ -o p3 main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o Recorder.o StayRecorder.o GuestRecorder.o
 	
 main.o:	main.cc Date.h
 	g++ -c main.cc
@@ -28,5 +28,8 @@ Recorder.o: Recorder.cc Recorder.h
 StayRecorder.o: StayRecorder.cc StayRecorder.h
 	g++ -c StayRecorder.cc 
 	
+GuestRecorder.o: GuestRecorder.cc GuestRecorder.h
+	g++ -c GuestRecorder.cc 
+
 clean:
 	rm -f *.o p3

@@ -10,6 +10,7 @@ using namespace std;
 
 #include "Recorder.h"
 #include "StayRecorder.h"
+#include "GuestRecorder.h"
 int main()
 {
   //Recorder r("TEST");
@@ -19,8 +20,15 @@ int main()
   Reservation* a=new Reservation(g,r,d,6);
   a->print();
   cout<<endl;
-  StayRecorder s("TEST FOR STAY");
-  s.update(a);
+  //Recorder ra;
+  StayRecorder *s=new StayRecorder("TEST FOR STAY");
+  GuestRecorder *ga=new GuestRecorder("TEST FOR GUEST");
+  s->update(a);
+  s->printRecords();
+  cout<<endl;
+  delete ga;
+  delete s;
+  delete a;
   return 0;
   
 }

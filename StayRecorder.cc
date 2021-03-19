@@ -5,7 +5,6 @@ using namespace std;
 #include "StayRecorder.h"
 
 StayRecorder::StayRecorder(string n):Recorder(n){
-
 }
 
 void StayRecorder::update(Reservation* a){
@@ -13,9 +12,10 @@ void StayRecorder::update(Reservation* a){
 	//form a string that is pretty much just guest name and duration of stay using string stream
 	stringstream ss;
 	if(a->getStay()>3){
-		cout<<"THE STAY IS GREATER THAN 3"<<endl;
-		ss<<"YOUR STAY IS: "<<a->getStay();
-		cout<<ss.str()<<endl;
+		//cout<<"THE STAY IS GREATER THAN 3"<<endl;
+		//cout<<a->getGuest().getName()<<endl;
+		ss<<"-- GUEST NAME:"<<a->getGuest().getName()<<" -> AND YOUR STAY DURATION IS: "<<a->getStay();
+		record.push_back(ss.str());
 	}
 	
 	//a->print();
