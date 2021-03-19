@@ -13,7 +13,14 @@ using namespace std;
 int main()
 {
   //Recorder r("TEST");
+  Guest *g=new Guest("Nirmith",true);
+  Room *r=new Room(C_REG, 501, 1500);
+  Date *d=new Date(28, 3, 2012);
+  Reservation* a=new Reservation(g,r,d,6);
+  a->print();
+  cout<<endl;
   StayRecorder s("TEST FOR STAY");
+  s.update(a);
   return 0;
   
 }
