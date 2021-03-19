@@ -9,10 +9,11 @@ using namespace std;
 */
 
 #include "Recorder.h"
+#include "StayRecorder.h"
 int main()
 {
   //Recorder r("TEST");
-  
+  StayRecorder s("TEST FOR STAY");
   return 0;
   
 }

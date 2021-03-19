@@ -28,7 +28,7 @@ float Reservation::getCharge(){
 	return charge;
 }
 
-//a getter for date perhaps
+//a getter for date, guest info and nah no room perhaps
 
 Date& Reservation::getDate(){
 	//da->print();
