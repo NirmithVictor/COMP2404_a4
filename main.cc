@@ -11,13 +11,13 @@ using namespace std;
 #include "Recorder.h"
 #include "StayRecorder.h"
 #include "GuestRecorder.h"
+#include "UpgradeRecorder.h"
 int main()
 {
-  //Recorder r("TEST");
   Guest *g=new Guest("Nirmith",true);
   Room *r=new Room(C_REG, 501, 1500);
   Date *d=new Date(28, 3, 2012);
-  Guest *g1=new Guest("Nirmith",true);
+  Guest *g1=new Guest("Nirmith",false);
   Room *r1=new Room(C_REG, 501, 1500);
   Date *d1=new Date(28, 3, 2012);
   Reservation* a=new Reservation(g,r,d,6);
@@ -27,6 +27,8 @@ int main()
   //Recorder ra;
   StayRecorder *s=new StayRecorder("TEST FOR STAY");
   GuestRecorder *ga=new GuestRecorder("TEST FOR GUEST");
+  UpgradeRecorder *u=new UpgradeRecorder("TEST FOR UPGRADE");
+  cout<<endl;
   s->update(a);
   s->update(b);
   s->printRecords();
@@ -34,9 +36,13 @@ int main()
   ga->update(a);
   ga->printRecords();
   cout<<endl;
+  u->update(b);
+  u->printRecords();
+  cout<<endl;
   delete ga;
   delete b;
   delete s;
+  delete u;
   delete a;
   return 0;
   
