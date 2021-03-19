@@ -16,6 +16,7 @@ class Reservation
     int getStay();
     float getCharge();
     Date& getDate();
+    Guest& getGuest();
     bool lessThan(Reservation*);
     void print();
     

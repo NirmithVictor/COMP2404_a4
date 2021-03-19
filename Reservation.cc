@@ -35,7 +35,9 @@ Date& Reservation::getDate(){
 	return *da;
 }
 
-
+Guest& Reservation::getGuest(){
+	return *g;
+}
 
 bool Reservation::lessThan(Reservation* l){
 	if(da->lessThan(l->getDate())){

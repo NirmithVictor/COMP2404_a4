@@ -20,6 +20,10 @@ int main()
   Room *r1=new Room(C_REG, 501, 1500);
   Date *d1=new Date(26, 3, 2012);
   Reservation* b=new Reservation(g1,r1,d1,7);
+  cout<<"TO GET GUEST NAME: "<<b->getGuest().getName()<<endl;
+  cout<<"TO GET STAY: "<<b->getStay()<<endl;
+  cout<<"TO CHECK IF GUEST IS PREMIUM:"<<b->getGuest().getPremium()<<endl;
+  cout<<"TO GET CHARGE: "<<b->getCharge()<<endl;
   //cout<<b->getCharge()<<endl;
   //Date *e=new Date(b->getDate());
   //e->print();
@@ -30,8 +34,8 @@ int main()
   //else{
   //	cout<<"A lesser than B"<<endl;
   //}
-  a->print();
-  b->print();
+  //a->print();
+  //b->print();
   cout<<endl;
   delete a;
   delete b;
