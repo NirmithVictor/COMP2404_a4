@@ -8,9 +8,16 @@ using namespace std;
 #include "Hotel.h"
 */
 
-#include "Reservation.h"
+#include "Recorder.h"
 int main()
 {
+  //Recorder r("TEST");
+  
+  return 0;
+  
+}
+
+/*TESTER FOR RESERVATION CLASS
   Guest *g=new Guest("Nirmith",true);
   Room *r=new Room(C_REG, 501, 1500);
   Date *d=new Date(28, 3, 2012);
@@ -39,9 +46,7 @@ int main()
   cout<<endl;
   delete a;
   delete b;
-  return 0;
-  
-}
+  */
 
   //tester for temporary hotel
   //Guest g("Nirmith",true);
