@@ -6,10 +6,11 @@
 
 #define MAX_SIZE 64
 
+class ResManager;
 class Hotel
 {
   public:
-  	Hotel(string);
+  	Hotel(string,ResManager*);
   	~Hotel();
   	RoomArray getRooms();
   	void addGuest(Guest*);
@@ -22,6 +23,7 @@ class Hotel
 	string Hname;
 	//collection of guests stored as a statically alloacted primitive array of guest pointers
 	Guest* arrGuest[MAX_SIZE];
+	ResManager* re;
 	int g_count;
 	RoomArray rooms;
 	//the reservation manager that will handle all the reservations for the hotel, stored as a ResManager pointer; this class is described in a later step

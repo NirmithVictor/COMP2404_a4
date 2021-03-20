@@ -4,9 +4,9 @@
 using namespace std;
 
 #include "Hotel.h"
-
+#include "ResManager.h"
 //,ResManager* a
-Hotel::Hotel(string n):Hname(n),g_count(0){
+Hotel::Hotel(string n,ResManager* r):Hname(n),g_count(0),re(r){
 	cout<<Hname<<endl;
 }
 Hotel::~Hotel(){
