@@ -10,7 +10,7 @@ class Hotel;
 class ResManager
 {
   public:
-	ResManager(Hotel*);
+	ResManager(Hotel* =NULL);
 	~ResManager();
 	void setHotel(Hotel*);
 	void addReservation(string, int, int, int, int, ReqRoomType);
@@ -22,7 +22,7 @@ class ResManager
   	Hotel* h;
 	Reservation* res[MAX_ARR];
 	int res_count;
-	vector<Recorder*> p;
+	vector<Recorder*> records;
 };
 
 #endif

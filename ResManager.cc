@@ -7,5 +7,19 @@ using namespace std;
 #include "ResManager.h"
 
 ResManager::ResManager(Hotel* a):h(a),res_count(0){
-	cout<<res_count<<endl;s
+	cout<<res_count<<endl;
+}
+
+ResManager::~ResManager(){
+	delete h;
+	//deleting the array for reservations
+	for(int i=0;i<res_count;i++){
+		delete res[i];
+	}
+	//do we need to delete the vector array seems real sus tbh
+}
+//
+void ResManager::setHotel(Hotel* a){
+	h=a;
+	
 }

@@ -11,10 +11,16 @@ using namespace std;
 #include "GuestRecorder.h"
 #include "UpgradeRecorder.h"
 */
-
+#include "ResManager.h"
+#include "Hotel.h"
 int main()
 {
 
+  ResManager *e=new ResManager();
+  //Hotel *b=new Hotel("Victorian Hotel",e);
+  e->setHotel(new Hotel("Victorian Hotel",e));
+  delete e;
+  //delete b;
   return 0;
   
 }
