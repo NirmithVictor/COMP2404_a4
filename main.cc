@@ -6,14 +6,20 @@ using namespace std;
 #include "Guest.h"
 #include "Room.h"
 #include "Hotel.h"
-*/
-
 #include "Recorder.h"
 #include "StayRecorder.h"
 #include "GuestRecorder.h"
 #include "UpgradeRecorder.h"
+*/
+
 int main()
 {
+
+  return 0;
+  
+}
+
+/*TESTER FOR RECORDER CLASSES
   Guest *g=new Guest("Nirmith",true);
   Room *r=new Room(C_REG, 501, 1500);
   Date *d=new Date(28, 3, 2012);
@@ -43,10 +49,7 @@ int main()
   delete b;
   delete s;
   delete u;
-  delete a;
-  return 0;
-  
-}
+  delete a;*/
 
 /*TESTER FOR RESERVATION CLASS
   Guest *g=new Guest("Nirmith",true);
