@@ -14,15 +14,15 @@ Room::~Room(){
 
 string Room::getType(){
 	if(type==0){
-		cout<<"Regular\n";
+		//cout<<"Regular\n";
 		return "Regular";
 	}
 	else if(type==1){
-		cout<<"Premium\n";
+		//cout<<"Premium\n";
 		return "Premium";
 	}
 	else if(type==2){
-		cout<<"Suite\n";
+		//cout<<"Suite\n";
 		return "Suite";
 	}
 	else{

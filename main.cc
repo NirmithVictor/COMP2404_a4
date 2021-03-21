@@ -44,7 +44,7 @@ int main()
   //hotel->printRooms();
   cout<<endl;
   e->setHotel(hotel);
-  e->addReservation("Nirmith",     2021, 5, 11,  45, C_PREM);
+  e->addReservation("Nirmith",     2021, 5, 11,  5, C_SUITE);
   e->addReservation("Ben",     2021, 5, 11,  4, C_PREM);
   cout<<endl;
   delete e;
