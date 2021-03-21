@@ -12,7 +12,7 @@ class Hotel
   public:
   	Hotel(string,ResManager*);
   	~Hotel();
-  	RoomArray getRooms();
+  	RoomArray& getRooms();
   	void addGuest(Guest*);
   	void addRoom(Room*);
   	void printGuest();

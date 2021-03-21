@@ -17,10 +17,38 @@ int main()
 {
 
   ResManager *e=new ResManager();
-  //Hotel *b=new Hotel("Victorian Hotel",e);
-  e->setHotel(new Hotel("Victorian Hotel",e));
+  Hotel *hotel=new Hotel("Victorian Hotel",e);
+  //guests
+  /*hotel->addGuest(new Guest("Juliet", true));
+  hotel->addGuest(new Guest("Ben", true));
+  hotel->addGuest(new Guest("Goodwin"));
+  hotel->addGuest(new Guest("Harper", true));
+  hotel->addGuest(new Guest("Ethan"));
+  hotel->addGuest(new Guest("Horace"));
+  hotel->addGuest(new Guest("Aimee"));
+  hotel->printGuest();
+  */
+  //rooms
+  cout<<endl<<"ROOM:"<<endl;
+  hotel->addRoom(new Room(C_SUITE, 501, 1500));
+  hotel->addRoom(new Room(C_PREM, 410, 700));
+  hotel->addRoom(new Room(C_PREM, 420, 700));
+  hotel->addRoom(new Room(C_REG, 322, 300));
+  hotel->addRoom(new Room(C_REG, 324, 300));
+  hotel->addRoom(new Room(C_REG, 326, 300));
+  hotel->addRoom(new Room(C_REG, 212, 200));
+  hotel->addRoom(new Room(C_REG, 214, 200));
+  hotel->addRoom(new Room(C_REG, 216, 200));
+  hotel->addRoom(new Room(C_REG, 218, 200));
+  //hotel->getRooms().get(1)->print();
+  //hotel->printRooms();
+  cout<<endl;
+  e->setHotel(hotel);
+  e->addReservation("Nirmith",     2021, 5, 11,  45, C_PREM);
+  e->addReservation("Ben",     2021, 5, 11,  4, C_PREM);
+  cout<<endl;
   delete e;
-  //delete b;
+  delete hotel;
   return 0;
   
 }

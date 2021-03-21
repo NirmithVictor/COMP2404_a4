@@ -18,7 +18,7 @@ Hotel::~Hotel(){
 	}
 }
 
-RoomArray Hotel::getRooms(){
+RoomArray& Hotel::getRooms(){
 	return rooms;
 }
 

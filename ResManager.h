@@ -2,6 +2,7 @@
 #define RESMANAGER_H
 
 #include "Recorder.h"
+#include "RoomArray.h"
 #include "Reservation.h"
 
 #include <vector>
@@ -17,12 +18,12 @@ class ResManager
 	void subscribe(Recorder*);
 	void print();
 	void printRecords();
-	void notify(Reservation*);
   private:
   	Hotel* h;
 	Reservation* res[MAX_ARR];
-	int res_count;
+	int numRes;
 	vector<Recorder*> records;
+	void notify(Reservation*);
 };
 
 #endif
