@@ -29,7 +29,7 @@ int main()
   //hotel->printGuest();
   
   //rooms
-  cout<<endl<<"ROOM:"<<endl;
+  //cout<<endl<<"ROOM:"<<endl;
   hotel->addRoom(new Room(C_SUITE, 501, 1500));
   hotel->addRoom(new Room(C_PREM, 410, 700));
   hotel->addRoom(new Room(C_PREM, 420, 700));

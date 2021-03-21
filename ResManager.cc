@@ -42,10 +42,17 @@ void ResManager::setHotel(Hotel* a){
 
 void ResManager::addReservation(string name, int yr, int mth, int day, int stay, ReqRoomType req){
 	//cout<< name <<endl;
-	Date* d;
+	//Date* d;
+	//Date* temp;
 	if(stay<31){
 		cout<<name<<endl;
-		d=new Date(day,mth,yr);
+		Date* d=new Date(day,mth,yr);
+		Date t(*d);
+		//t=d;
+		t.add(stay);
+		//temp->print();
+		t.print();
+		cout<<endl;
 		d->print();
 		//tester for date
 		/*cout<<"Date is :";
@@ -69,20 +76,35 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		//cout<<a<<endl;
 		//h->getRooms().print();
 		int count=0;
-		//cout<<"Size: "<<h->getRooms().getSize()<<endl;
-		for(int i=0;i<h->getRooms().getSize();i++){
-			//h->getRooms().get(i)->print();
-			//the room is of a given type
-			
-			if(a == h->getRooms().get(i)->getType() ){
-				
-			}
-
-		}
-		cout<<endl<<endl;
+		
+		delete d;
+		
 	}
 	else{
 		cout<<"Guest: "<< name <<" couldn't be created due to excessive stay days"<<endl;
 		return;
 	}
+	cout<<endl;
 }
+//cout<<"Size: "<<h->getRooms().getSize()<<endl;
+		/*for(int i=0;i<h->getRooms().getSize();i++){
+			//h->getRooms().get(i)->print();
+			//the room is of a given type
+			
+			if(a == h->getRooms().get(i)->getType() ){
+				if(numRes==0){
+				//check if name is in it if not do not push other wise if it is then yes
+				}
+				else{
+					for(int j=0;j<numRes;j++){
+						//check if the day for stay is there or nah along with stay so that and then use the add shizzle to check if it is not in those days
+						//for(int i=0;i<stay;i++){
+						//	check if it is not in those days or starting and ending with it
+						//}
+						//if found to be unique inside the previous if statement{
+							// then proceed to check if name is in the room if YES THEN ADD DYNAMICALLY ALLOCATE NEW RESERVATION AND THEN ADD TO THE RESERVATION COLLECTION ELSE DO NOTHING
+						//}
+					}
+				}
+			}
+		}*/

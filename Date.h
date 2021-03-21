@@ -6,6 +6,7 @@ class Date
   public:
     Date(int=0, int=0, int=2000);
     ~Date();
+    Date(Date&);
     void setDate(int, int, int);
     bool lessThan(Date&);
     bool equals(Date&);

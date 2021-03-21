@@ -14,7 +14,9 @@ Date::~Date()
 {
   cout<<"in dtor "<<day<<endl;
 }
-
+Date::Date(Date& a){
+	setDate(a.day,a.month,a.year);
+}
 //bool lessThan if it is less than this date return true else return false
 bool Date::lessThan(Date& a){
 	if(year<a.year){
