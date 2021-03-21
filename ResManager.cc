@@ -23,15 +23,23 @@ void ResManager::setHotel(Hotel* a){
 	h=a;
 }
 
-//addReservation function breakdown
-/*
-1. stay value must be below 31 if not then break else continue
-2. Dynamically allocate a new Date object with given said date store in a temporary pointer
-3. loop over hotel room criteria
-	3.1 it must satify or exist in the req
-	3.2 check if the room is available for every starting date
-4. if no room is available break	
-*/
+
+//cout<<"SATISFIED TEST"<<endl;
+				//maieh->getRooms().get(i)->print();
+				//room must be available on these days if no do not create a reservation
+				/*Guest *g;
+				if(h->findGuest(name,&g)){
+					g->print();
+					count=1;
+					//res[numRes]=new Reservation(g,h->getRooms().get(i),d,stay);
+					//numRes++;
+					//cout<<endl;
+				}
+				else{
+					cout<<endl;
+					return;	
+				}*/
+
 void ResManager::addReservation(string name, int yr, int mth, int day, int stay, ReqRoomType req){
 	//cout<< name <<endl;
 	Date* d;
@@ -60,30 +68,18 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		}
 		//cout<<a<<endl;
 		//h->getRooms().print();
-		cout<<"Size: "<<h->getRooms().getSize()<<endl;
+		int count=0;
+		//cout<<"Size: "<<h->getRooms().getSize()<<endl;
 		for(int i=0;i<h->getRooms().getSize();i++){
 			//h->getRooms().get(i)->print();
 			//the room is of a given type
-			if(a == h->getRooms().get(i)->getType()){
-				//cout<<"SATISFIED TEST"<<endl;
-				//maieh->getRooms().get(i)->print();
-				//room must be available on these days if no do not create a reservation
-				Guest *g;
-				if(h->findGuest(name,&g)){
-					g->print();
-					res[numRes]=new Reservation(g,h->getRooms().get(i),d,stay);
-					//cout<<endl;
-				}
-				else{
-					cout<<endl;
-					return;	
-				}
+			
+			if(a == h->getRooms().get(i)->getType() ){
+				
 			}
 
 		}
 		cout<<endl<<endl;
-		
-		delete d;
 	}
 	else{
 		cout<<"Guest: "<< name <<" couldn't be created due to excessive stay days"<<endl;
