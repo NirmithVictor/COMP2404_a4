@@ -63,11 +63,23 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		cout<<"Size: "<<h->getRooms().getSize()<<endl;
 		for(int i=0;i<h->getRooms().getSize();i++){
 			//h->getRooms().get(i)->print();
-			
+			//the room is of a given type
 			if(a == h->getRooms().get(i)->getType()){
 				//cout<<"SATISFIED TEST"<<endl;
-				h->getRooms().get(i)->print();	
+				//maieh->getRooms().get(i)->print();
+				//room must be available on these days if no do not create a reservation
+				Guest *g;
+				if(h->findGuest(name,&g)){
+					g->print();
+					res[numRes]=new Reservation(g,h->getRooms().get(i),d,stay);
+					//cout<<endl;
+				}
+				else{
+					cout<<endl;
+					return;	
+				}
 			}
+
 		}
 		cout<<endl<<endl;
 		

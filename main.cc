@@ -19,15 +19,15 @@ int main()
   ResManager *e=new ResManager();
   Hotel *hotel=new Hotel("Victorian Hotel",e);
   //guests
-  /*hotel->addGuest(new Guest("Juliet", true));
+  hotel->addGuest(new Guest("Juliet", true));
   hotel->addGuest(new Guest("Ben", true));
   hotel->addGuest(new Guest("Goodwin"));
   hotel->addGuest(new Guest("Harper", true));
   hotel->addGuest(new Guest("Ethan"));
   hotel->addGuest(new Guest("Horace"));
   hotel->addGuest(new Guest("Aimee"));
-  hotel->printGuest();
-  */
+  //hotel->printGuest();
+  
   //rooms
   cout<<endl<<"ROOM:"<<endl;
   hotel->addRoom(new Room(C_SUITE, 501, 1500));
@@ -44,7 +44,8 @@ int main()
   //hotel->printRooms();
   cout<<endl;
   e->setHotel(hotel);
-  e->addReservation("Nirmith",     2021, 5, 11,  5, C_SUITE);
+  e->addReservation("Juliet",     2021, 5, 11,  5, C_SUITE);
+  e->addReservation("Nirmith",     2021, 5, 11,  5, C_REG);
   e->addReservation("Ben",     2021, 5, 11,  4, C_PREM);
   cout<<endl;
   delete e;
