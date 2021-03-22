@@ -43,20 +43,10 @@ void ResManager::setHotel(Hotel* a){
 				}*/
 
 void ResManager::addReservation(string name, int yr, int mth, int day, int stay, ReqRoomType req){
-	//cout<< name <<endl;
-	//Date* d;
-	//Date* temp;
+
 	if(stay<31){
 		cout<<name<<endl;
-		//t=d;
-		//t.add(stay);
-		//temp->print();
-		//t.print();
 		cout<<endl;
-		//d->print();
-		//tester for date
-		/*cout<<"Date is :";
-		date->print();*/
 		cout<<endl;
 		//cout<<req;
 		//temporary string for cross referenceing it
@@ -87,8 +77,11 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 						Reservation* r=new Reservation(g,h->getRooms().get(i),d,stay);
 						res[numRes]=r;
 						numRes++;
+						
+						res[0]->getDate()->print();
+						cout<<endl;
+						r->print();
 						notify(r);
-						//delete r;
 					}
 					//check if guests name is name the hotel guest collection if yes then dynamically allocate the Reservation object with guest, room, date and stay;
 					//push into the reservation collection
@@ -112,13 +105,18 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 						cout<<endl;
 						cout<<name<<" EXISTS"<<endl;
 						Date t(*d);
+						int c=0;
 						for(int i=0;i<numRes;i++){
 							cout<<"STAY: \n";
 							//int k=1;
 							for(int j=1;j<=stay;j++){
 								//check date in the reservation collection and see if any of it is occupied if not then we add to it else do not add
+								c++;
 								t.add(1);
-								t.print();
+								if(&t!=res[i]->getDate()){
+									cout<<"YAY"<<endl;
+								}
+								//t.print();
 								//t(*d);
 								cout<<endl;
 							//	k++;
@@ -183,7 +181,7 @@ void ResManager::printRecords(){
 }
 
 void ResManager::notify(Reservation* a){
-a->print();
+//a->print();
 	for(int i=0;i<records.size();i++){
 		records[i]->update(a);
 	}

@@ -30,17 +30,17 @@ float Reservation::getCharge(){
 
 //a getter for date, guest info and nah no room perhaps
 
-Date& Reservation::getDate(){
+Date* Reservation::getDate(){
 	//da->print();
-	return *da;
+	return da;
 }
 
-Guest& Reservation::getGuest(){
-	return *g;
+Guest* Reservation::getGuest(){
+	return g;
 }
 
 bool Reservation::lessThan(Reservation* l){
-	if(da->lessThan(l->getDate())){
+	if(da->lessThan(*(l->getDate()))){
 		return true;
 	}
 	return false;
