@@ -77,7 +77,6 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		//h->getRooms().print();
 		int count=0;
 		Date* d=new Date(day,mth,yr);
-		Date t(*d);
 		for(int i=0;i<h->getRooms().getSize();i++){
 			if(h->getRooms().get(i)->getType()==a){
 		//		cout<<"FOUND TYPE"<<endl;
@@ -108,11 +107,21 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 					//cout<<"IN TESTING PROGRESS"<<endl;
 					Guest *g;
 					if(h->findGuest(name,&g)){
+						cout<<"Original Date: ";
+						d->print();
+						cout<<endl;
 						cout<<name<<" EXISTS"<<endl;
+						Date t(*d);
 						for(int i=0;i<numRes;i++){
-							cout<<" STAY: ";
-							for(int j=0;j<stay;j++){
-								cout<<j<<" ";
+							cout<<"STAY: \n";
+							//int k=1;
+							for(int j=1;j<=stay;j++){
+								//check date in the reservation collection and see if any of it is occupied if not then we add to it else do not add
+								t.add(1);
+								t.print();
+								//t(*d);
+								cout<<endl;
+							//	k++;
 							}
 							cout<<endl;
 						}
