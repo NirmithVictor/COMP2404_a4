@@ -20,8 +20,9 @@ class ResManager
 	void printRecords();
   private:
   	Hotel* h;
+  	//Date* d;
 	Reservation* res[MAX_ARR];
-	int numRes=0;
+	int numRes;
 	vector<Recorder*> records;
 	void notify(Reservation*);
 };

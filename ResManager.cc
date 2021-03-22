@@ -8,15 +8,15 @@ using namespace std;
 
 ResManager::ResManager(Hotel* a):h(a){
 	//cout<<numRes<<endl;
-	//numRes=0;
+	numRes=0;
 	
 }
 
 ResManager::~ResManager(){
 	//deleting the array for reservations
-	/*for(int i=0;i<numRes;i++){
+	for(int i=0;i<numRes;i++){
 		delete res[i];
-	}*/
+	}
 	//delete h;
 	//do we need to delete the vector array seems real sus tbh
 }
@@ -48,14 +48,12 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 	//Date* temp;
 	if(stay<31){
 		cout<<name<<endl;
-		Date* d=new Date(day,mth,yr);
-		Date t(*d);
 		//t=d;
 		//t.add(stay);
 		//temp->print();
-		t.print();
+		//t.print();
 		cout<<endl;
-		d->print();
+		//d->print();
 		//tester for date
 		/*cout<<"Date is :";
 		date->print();*/
@@ -78,7 +76,8 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		//cout<<a<<endl;
 		//h->getRooms().print();
 		int count=0;
-		
+		Date* d=new Date(day,mth,yr);
+		Date t(*d);
 		for(int i=0;i<h->getRooms().getSize();i++){
 			if(h->getRooms().get(i)->getType()==a){
 		//		cout<<"FOUND TYPE"<<endl;
@@ -89,28 +88,43 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 						Reservation* r=new Reservation(g,h->getRooms().get(i),d,stay);
 						res[numRes]=r;
 						numRes++;
-						//cout<<numRes<<endl;
+						notify(r);
+						//delete r;
 					}
-					
 					//check if guests name is name the hotel guest collection if yes then dynamically allocate the Reservation object with guest, room, date and stay;
 					//push into the reservation collection
 					//calculate accumulated points for the guest so like compute points in the room class and then do the addPts function in guest
 					//notify function call I think
 				}
-				else{
-					cout<<"IN TESTING PROGRESS"<<endl;
-				}
 		//		else{
-		//			for(int i=0;i<numRes;i++){
-						//check if the name of guest is in the hotel guest collection if yes then we proceed to check if the day is occupied or not in the reservation 
+		//		check if the name of guest is in the hotel guest collection if yes then we proceed to check if the day is occupied or not in the reservation 
+		//			for(int i=0;i<numRes;i++){				
 						//if not occupied dynamically allocate the reservation pointer and push into the reservation collection
 						//calculate accumulated points for the guest so like compute points in the room class and then do the addPts function in guest
 						//notify function call I think
 		//			}
 		//		}
+				else{
+					//cout<<"IN TESTING PROGRESS"<<endl;
+					Guest *g;
+					if(h->findGuest(name,&g)){
+						cout<<name<<" EXISTS"<<endl;
+						for(int i=0;i<numRes;i++){
+							cout<<" STAY: ";
+							for(int j=0;j<stay;j++){
+								cout<<j<<" ";
+							}
+							cout<<endl;
+						}
+					}
+					//for(int i=0;i<numRes;i++){
+						
+					//}
+				}
+		
 			}
 		}
-		//delete d;
+		delete d;
 		
 		
 	}
@@ -160,6 +174,7 @@ void ResManager::printRecords(){
 }
 
 void ResManager::notify(Reservation* a){
+a->print();
 	for(int i=0;i<records.size();i++){
 		records[i]->update(a);
 	}
