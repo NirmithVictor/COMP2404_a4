@@ -49,7 +49,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		Date* d=new Date(day,mth,yr);
 		Date t(*d);
 		//t=d;
-		t.add(stay);
+		//t.add(stay);
 		//temp->print();
 		t.print();
 		cout<<endl;
@@ -77,6 +77,25 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		//h->getRooms().print();
 		int count=0;
 		
+		//for(int i=0;i<h->getRooms().getSize();i++){
+		//	if(h->getRooms().get(i)->getType()==a){
+		//		cout<<"FOUND TYPE"<<endl;
+		//		if(numRes==0){
+					//check if guests name is name the hotel guest collection if yes then dynamically allocate the Reservation object with guest, room, date and stay;
+					//push into the reservation collection
+					//calculate accumulated points for the guest so like compute points in the room class and then do the addPts function in guest
+					//notify function call I think
+		//		}
+		//		else{
+		//			for(int i=0;i<numRes;i++){
+						//check if the name of guest is in the hotel guest collection if yes then we proceed to check if the day is occupied or not in the reservation 
+						//if not occupied dynamically allocate the reservation pointer and push into the reservation collection
+						//calculate accumulated points for the guest so like compute points in the room class and then do the addPts function in guest
+						//notify function call I think
+		//			}
+		//		}
+		//	}
+		//}
 		delete d;
 		
 	}
@@ -108,3 +127,25 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 				}
 			}
 		}*/
+
+void ResManager::subscribe(Recorder* a){
+	records.push_back(a);
+}
+
+void ResManager::print(){
+	for(int i=0;i<numRes;i++){
+		res[i]->print();
+	}
+}
+
+void ResManager::printRecords(){
+	for(int i=0;i<records.size();i++){
+		records[i]->printRecords();
+	}
+}
+
+void ResManager::notify(Reservation* a){
+	for(int i=0;i<records.size();i++){
+		records[i]->update(a);
+	}
+}
