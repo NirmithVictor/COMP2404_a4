@@ -48,6 +48,7 @@ bool Reservation::lessThan(Reservation* l){
 
 void Reservation::print(){
 	cout<<"-- Guest: "<<g->getName()<<" :Room Number: "<<room->getRoom()<<" Arrival Date: ";
+	//Date *a=da;
 	da->print();
 	cout<<"; stay:"<<stay<<"; total: $"<<charge<<endl;
 }

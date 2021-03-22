@@ -100,15 +100,15 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 					//cout<<"IN TESTING PROGRESS"<<endl;
 					Guest *g;
 					if(h->findGuest(name,&g)){
-						cout<<"Original Date: ";
+						//cout<<"Original Date: ";
 						d->print();
 						cout<<endl;
 						cout<<name<<" EXISTS"<<endl;
 						Date t(*d);
-						
+						int c;
 						for(int i=0;i<numRes;i++){
-							cout<<"STAY: \n";
-							int c=0;
+							//cout<<"STAY: \n";
+							c=0;
 							//int k=1;
 							for(int j=1;j<=stay;j++){
 								//check date in the reservation collection and see if any of it is occupied if not then we add to it else do not add
@@ -118,20 +118,23 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 									//cout<<"YAY"<<endl;
 									c++;
 								}
-								//t.print();
-								//t(*d);
-								cout<<endl;
-							//	k++;
 							}
-							if(c==stay){
-								cout<<"Yes"<<endl;
-							}
-							cout<<endl;
+							
 						}
-					}
+						/*if(c==stay){
+							//then we push it into the res collection and increment numRes
+							Reservation* r=new Reservation(g,h->getRooms().get(i),d,stay);
+							res[numRes]=r;
+							numRes++;
+							//cout<<"Yes"<<endl;
+						}else{
+							//cout<<day<<"-"<<mth<<"-"<<yr<<" are booked."<<endl;
+						}
+						cout<<endl;
+					}*/
 					//for(int i=0;i<numRes;i++){
 						
-					//}
+					}
 				}
 		
 			}
