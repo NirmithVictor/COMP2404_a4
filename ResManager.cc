@@ -105,21 +105,26 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 						cout<<endl;
 						cout<<name<<" EXISTS"<<endl;
 						Date t(*d);
-						int c=0;
+						
 						for(int i=0;i<numRes;i++){
 							cout<<"STAY: \n";
+							int c=0;
 							//int k=1;
 							for(int j=1;j<=stay;j++){
 								//check date in the reservation collection and see if any of it is occupied if not then we add to it else do not add
-								c++;
+								//c++;
 								t.add(1);
 								if(&t!=res[i]->getDate()){
-									cout<<"YAY"<<endl;
+									//cout<<"YAY"<<endl;
+									c++;
 								}
 								//t.print();
 								//t(*d);
 								cout<<endl;
 							//	k++;
+							}
+							if(c==stay){
+								cout<<"Yes"<<endl;
 							}
 							cout<<endl;
 						}

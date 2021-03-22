@@ -14,7 +14,7 @@ void StayRecorder::update(Reservation* a){
 	if(a->getStay()>3){
 		//cout<<"THE STAY IS GREATER THAN 3"<<endl;
 		//cout<<a->getGuest().getName()<<endl;
-		ss<<"-- GUEST NAME:"<<a->getGuest().getName()<<" -> AND YOUR STAY DURATION IS: "<<a->getStay();
+		ss<<"-- GUEST NAME:"<<a->getGuest()->getName()<<" -> AND YOUR STAY DURATION IS: "<<a->getStay();
 		record.push_back(ss.str());
 	}
 	
