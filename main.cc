@@ -47,6 +47,7 @@ int main()
   e->addReservation("Juliet",     2021, 5, 11,  5, C_SUITE);
   e->addReservation("Nirmith",     2021, 5, 11,  5, C_REG);
   e->addReservation("Ben",     2021, 5, 11,  4, C_PREM);
+  e->print();
   cout<<endl;
   delete e;
   delete hotel;

@@ -6,7 +6,7 @@
 #include "Reservation.h"
 
 #include <vector>
-
+//#define NULL 
 class Hotel;
 class ResManager
 {
@@ -21,7 +21,7 @@ class ResManager
   private:
   	Hotel* h;
 	Reservation* res[MAX_ARR];
-	int numRes;
+	int numRes=0;
 	vector<Recorder*> records;
 	void notify(Reservation*);
 };

@@ -6,15 +6,17 @@ using namespace std;
 #include "Hotel.h"
 #include "ResManager.h"
 
-ResManager::ResManager(Hotel* a):h(a),numRes(0){
+ResManager::ResManager(Hotel* a):h(a){
 	//cout<<numRes<<endl;
+	//numRes=0;
+	
 }
 
 ResManager::~ResManager(){
 	//deleting the array for reservations
-	for(int i=0;i<numRes;i++){
+	/*for(int i=0;i<numRes;i++){
 		delete res[i];
-	}
+	}*/
 	//delete h;
 	//do we need to delete the vector array seems real sus tbh
 }
@@ -60,7 +62,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		cout<<endl;
 		//cout<<req;
 		//temporary string for cross referenceing it
-		string a="";
+		string a;
 		if(req==0){
 			//cout<<"Regular\n";
 			a = "Regular";
@@ -77,15 +79,27 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		//h->getRooms().print();
 		int count=0;
 		
-		//for(int i=0;i<h->getRooms().getSize();i++){
-		//	if(h->getRooms().get(i)->getType()==a){
+		for(int i=0;i<h->getRooms().getSize();i++){
+			if(h->getRooms().get(i)->getType()==a){
 		//		cout<<"FOUND TYPE"<<endl;
-		//		if(numRes==0){
+				if(numRes<1){
+					Guest *g;
+					if(h->findGuest(name,&g)){
+						cout<<name<<" FOUND"<<endl;
+						Reservation* r=new Reservation(g,h->getRooms().get(i),d,stay);
+						res[numRes]=r;
+						numRes++;
+						//cout<<numRes<<endl;
+					}
+					
 					//check if guests name is name the hotel guest collection if yes then dynamically allocate the Reservation object with guest, room, date and stay;
 					//push into the reservation collection
 					//calculate accumulated points for the guest so like compute points in the room class and then do the addPts function in guest
 					//notify function call I think
-		//		}
+				}
+				else{
+					cout<<"IN TESTING PROGRESS"<<endl;
+				}
 		//		else{
 		//			for(int i=0;i<numRes;i++){
 						//check if the name of guest is in the hotel guest collection if yes then we proceed to check if the day is occupied or not in the reservation 
@@ -94,9 +108,10 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 						//notify function call I think
 		//			}
 		//		}
-		//	}
-		//}
-		delete d;
+			}
+		}
+		//delete d;
+		
 		
 	}
 	else{
