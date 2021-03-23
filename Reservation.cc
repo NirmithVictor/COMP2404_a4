@@ -16,8 +16,9 @@ Reservation::Reservation(Guest* a,Room* b,Date* arr,int s){
 Reservation::~Reservation(){
 	cout<<"Reservation is destroyed"<<endl;
 	delete da;
+	//delete g;
 	//if(g!=NULL){
-	//	delete g;
+	//delete g;
 	//}
 	//if(room!=NULL){
 	//	delete room;

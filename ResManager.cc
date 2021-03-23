@@ -17,9 +17,6 @@ ResManager::~ResManager(){
 	for(int i=0;i<numRes;i++){
 		delete res[i];
 	}
-	if(h!=NULL){
-		//delete h;
-	}
 	//delete h;
 	//do we need to delete the vector array seems real sus tbh
 }
@@ -114,6 +111,12 @@ void ResManager::setHotel(Hotel* a){
 				}
 		
 			}*/
+			//a->print();
+							//t.print();
+							//cout<<endl;
+							//cout<<res[j]->getDate()<<endl;;
+							//(res[j]->getRoom()!=h->getRooms().get(i)->getRoom())
+							//res[j]->getRoom()->print();
 
 void ResManager::addReservation(string name, int yr, int mth, int day, int stay, ReqRoomType req){
 
@@ -138,8 +141,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 			//cout<<"Suite\n";
 			a = "Suite";
 		}
-		//cout<<a<<endl;
-		//h->getRooms().print();
+		
 		int count=0;
 		Room *r=NULL;
 		Guest* g=NULL;
@@ -164,12 +166,6 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 							//res[j]->print();
 							//cout<<"here"<<endl;
 							Date *a=res[j]->getDate();
-							//a->print();
-							//t.print();
-							//cout<<endl;
-							//cout<<res[j]->getDate()<<endl;;
-							//(res[j]->getRoom()!=h->getRooms().get(i)->getRoom())
-							//cout<<res[j]->getRoom()->getRoom()<<endl;
 							if((!(a->equals(t))||(t.lessThan(*a)))  ){
 								//cout<<"True"<<endl;
 								r=h->getRooms().get(i);
@@ -179,13 +175,10 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 							}
 							//delete a;
 						}
-						//if(r!=NULL){
-							//cout<<"YEY"<<endl;
-							//r->print();
-						//}
+						
 					}
 					else{
-					break;
+						break;
 					}
 					
 				}
@@ -196,6 +189,14 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 			res[numRes]=re;
 			//g->print();
 			numRes++;
+			//calculate points for the guest
+			g->print();
+			r->print();
+			int a;
+			re->getRoom()->computePoints(a);
+			cout<<a<<endl;
+			//notify 
+			notify(re);
 			//d->print();
 			//delete re;
 			//cout<<endl;

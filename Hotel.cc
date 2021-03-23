@@ -16,6 +16,7 @@ Hotel::~Hotel(){
 		cout<<arrGuest[i]->getName()<<" destroyed"<<endl;
 		delete arrGuest[i];
 	}
+	//delete re;
 }
 
 RoomArray& Hotel::getRooms(){

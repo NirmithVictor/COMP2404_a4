@@ -22,10 +22,10 @@ class Reservation
     void print();
     
   private:
-    Guest* g;
-    Date* da;
+    Guest* g=NULL;
+    Date* da=NULL;
     int stay;
-    Room* room;
+    Room* room=NULL;
     float charge;
 };
 
