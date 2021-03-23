@@ -13,6 +13,10 @@ using namespace std;
 */
 #include "ResManager.h"
 #include "Hotel.h"
+#include "Recorder.h"
+#include "StayRecorder.h"
+#include "GuestRecorder.h"
+#include "UpgradeRecorder.h"
 int main()
 {
 
@@ -65,6 +69,7 @@ int main()
   cout<<endl;
   delete resMgr;
   delete hotel;
+  /**/
   return 0;
   
 }
@@ -87,9 +92,12 @@ int main()
   cout<<endl;
   s->update(a);
   s->update(b);
+  cout<<"stay"<<endl;
   s->printRecords();
   cout<<endl;
   ga->update(a);
+  ga->update(b);
+  cout<<"guest"<<endl;
   ga->printRecords();
   cout<<endl;
   u->update(b);
