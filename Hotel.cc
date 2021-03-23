@@ -7,7 +7,7 @@ using namespace std;
 #include "ResManager.h"
 //,ResManager* a
 Hotel::Hotel(string n,ResManager* r):Hname(n),g_count(0),re(r){
-	cout<<Hname;
+	cout<<Hname<<endl;
 }
 Hotel::~Hotel(){
 	//cout<<Hname<<" destroyed"<<endl;

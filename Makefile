@@ -1,5 +1,5 @@
-p3:	main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o Recorder.o StayRecorder.o GuestRecorder.o UpgradeRecorder.o ResManager.o
-	g++ -o p3 main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o Recorder.o StayRecorder.o GuestRecorder.o UpgradeRecorder.o ResManager.o
+p3:	main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o Recorder.o StayRecorder.o GuestRecorder.o UpgradeRecorder.o ResManager.o Control.o
+	g++ -o p3 main.o Date.o Guest.o Room.o Hotel.o RoomArray.o Reservation.o Recorder.o StayRecorder.o GuestRecorder.o UpgradeRecorder.o ResManager.o Control.o
 	
 main.o:	main.cc Date.h
 	g++ -c main.cc
@@ -36,6 +36,9 @@ UpgradeRecorder.o: UpgradeRecorder.cc UpgradeRecorder.h
 	
 ResManager.o: Recorder.h ResManager.cc ResManager.h
 	g++ -c ResManager.cc
+
+Control.o: Control.h Control.cc
+	g++ -c Control.cc
 
 clean:
 	rm -f *.o p3

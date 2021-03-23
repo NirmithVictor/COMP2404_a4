@@ -7,19 +7,24 @@ using namespace std;
 #include "Room.h"
 #include "Hotel.h"
 #include "Recorder.h"
-#include "StayRecorder.h"
-#include "GuestRecorder.h"
-#include "UpgradeRecorder.h"
-*/
 #include "ResManager.h"
 #include "Hotel.h"
 #include "Recorder.h"
 #include "StayRecorder.h"
 #include "GuestRecorder.h"
 #include "UpgradeRecorder.h"
+*/
+
+#include "Control.h"
 int main()
 {
+  Control c;
+  c.launch();
+  return 0;
+  
+}
 
+/* RESMANAGER TESTER
   ResManager *resMgr=new ResManager();
   Hotel *hotel=new Hotel("Victorian Hotel",resMgr);
   //guests
@@ -48,9 +53,9 @@ int main()
   //hotel->printRooms();
   //cout<<endl;
   resMgr->setHotel(hotel);
-  StayRecorder *s =new StayRecorder(" STAY RECORDER EVENTS");
-  UpgradeRecorder *u=new UpgradeRecorder(" UPGRADE RECORDER EVENTS");
-  GuestRecorder *ga=new GuestRecorder(" GUEST RECORDER EVENTS");
+  StayRecorder *s =new StayRecorder(" ");
+  UpgradeRecorder *u=new UpgradeRecorder(" ");
+  GuestRecorder *ga=new GuestRecorder(" ");
   resMgr->subscribe(s);
   resMgr->subscribe(u);
   resMgr->subscribe(ga);
@@ -85,10 +90,7 @@ int main()
   delete ga;
   delete resMgr;
   delete hotel;
-  /**/
-  return 0;
-  
-}
+  */
 
 /*TESTER FOR RECORDER CLASSES
   Guest *g=new Guest("Nirmith",true);

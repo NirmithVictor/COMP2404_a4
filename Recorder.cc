@@ -5,7 +5,6 @@ using namespace std;
 #include "Recorder.h"
 
 Recorder::Recorder(string n):Recorder_name(n){
-	cout<<"NAME: "<<Recorder_name<<endl;
 }
 
 void Recorder::printRecords(){

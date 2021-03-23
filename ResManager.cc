@@ -73,7 +73,13 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 								r=h->getRooms().get(i);
 								//r->print();
 								re=new Reservation(g,r,d,stay);
-								//break;
+								r=NULL;
+							}else{
+								//g=NULL;
+								d=NULL;
+								r=NULL;
+								re=NULL;
+								break;
 							}
 							//delete a;
 						}
@@ -86,7 +92,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 				}
 			}
 		}
-		if(re!=NULL  && g!=NULL && r!=NULL){
+		if(re!=NULL){
 			//re->print();
 			notify(re);
 			res[numRes]=re;
@@ -97,10 +103,10 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 			//cout<<a<<endl;
 			re->getGuest()->addPts(a);
 		}else if(g==NULL){
-			cout<<"  GUEST "<< name <<" DOES NOT EXIST IN FILE";
+			cout<<"  GUEST "<< name <<" DOES NOT EXIST IN FILE"<<endl;
 		}
 		else if(r==NULL){
-			cout<<"ROOM IS BOOKED"<<endl;
+			cout<<"  ROOM IS BOOKED"<<endl;
 		}
 		//delete d;
 		//delete r;
@@ -110,7 +116,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		cout<<"Guest: "<< name <<" couldn't be created due to excessive stay days";
 		return;
 	}
-	cout<<endl;
+	//cout<<endl;
 }
 //cout<<"Size: "<<h->getRooms().getSize()<<endl;
 		/*for(int i=0;i<h->getRooms().getSize();i++){
@@ -137,7 +143,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 
 void ResManager::subscribe(Recorder* a){
 	records.push_back(a);
-	cout<<records.size()<<endl;
+	//cout<<records.size()<<endl;
 }
 
 void ResManager::print(){

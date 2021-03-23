@@ -12,11 +12,9 @@ void GuestRecorder::update(Reservation* a){
 	//form a string that is pretty much just guest name and duration of stay using string stream
 	stringstream ss;
 	//cout<<"TEST FOR GUEST"<<endl;
-	if(a->getGuest()->getPremium()){
+	if(!(a->getGuest()->getPremium()) && ((a->getRoom()->getType()=="Premium") || (a->getRoom()->getType()=="Suite"))){
 		//cout<<"IT IS PREMIUM"<<endl;
 		ss<<"-- GUEST NAME:"<<a->getGuest()->getName()<<" -> AND YOUR STAY DURATION IS: "<<a->getStay();
 		record.push_back(ss.str());
 	}
-	
-	//a->print();
 }

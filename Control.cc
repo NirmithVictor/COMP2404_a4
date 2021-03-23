@@ -2,6 +2,47 @@
 using namespace std;
 #include <string>
 
+#include "Control.h"
+
+Control:: Control(){
+	
+  resMgr=new ResManager();
+  hotel=new Hotel("Victorian Hotel",resMgr);
+  resMgr->setHotel(hotel);
+  //initHotel();
+  s =new StayRecorder(" STAY RECORDER");
+  resMgr->subscribe(s);
+  ga=new GuestRecorder(" GUEST RECORDER");
+  resMgr->subscribe(ga);
+  u=new UpgradeRecorder(" ");
+  resMgr->subscribe(u);
+  //ga=new GuestRecorder(" GUEST RECORDER");
+  //resMgr->subscribe(s);
+  //resMgr->subscribe(u);
+  //resMgr->subscribe(ga);
+}
+
+Control::~Control(){
+	delete hotel;
+	delete resMgr;
+	delete s;
+	delete ga;
+	delete u;
+}
+
+void Control::launch(){
+	initHotel();
+	cout<<"\nGUESTS"<<endl;
+	hotel->printGuest();
+	cout<<"\nTHE ROOMS\n";
+	hotel->printRooms();
+	cout<<"\nSTAY RECORDS\n";
+	s->printRecords();
+	cout<<"\nGUEST RECORDS\n";
+	ga->printRecords();
+	cout<<"\nSTAY RECORDS\n";
+	u->printRecords();
+}
 
 void Control::initHotel()
 {
