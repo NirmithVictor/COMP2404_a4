@@ -3,7 +3,11 @@
 
 class Control
 {
-
+	public:
+		Control();
+		~Control();
+		void launch();
+		void initHotel();
 };
 
 #endif
