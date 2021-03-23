@@ -115,7 +115,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 			cout<<"  GUEST "<< name <<" DOES NOT EXIST IN FILE"<<endl;
 		}
 		else if(r==NULL){
-			cout<<name<<"  ROOM IS BOOKED"<<endl;
+			cout<<"  ROOM IS BOOKED"<<endl;
 		}
 		//delete d;
 		//delete r;
