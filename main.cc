@@ -46,8 +46,8 @@ int main()
   resMgr->setHotel(hotel);
   resMgr->addReservation("Ben",     2021, 5, 11,  4, C_PREM);
   resMgr->addReservation("Juliet",  2021, 5, 10,  3, C_PREM);
-  //resMgr->addReservation("Horace",  2021, 5, 28, 10, C_PREM);
-  //resMgr->addReservation("Aimee",   2021, 5, 28,  8, C_PREM);
+  resMgr->addReservation("Horace",  2021, 5, 28, 10, C_PREM);
+  resMgr->addReservation("Aimee",   2021, 5, 28,  8, C_PREM);
   //resMgr->addReservation("Sophie",  2021, 5, 28,  8, C_PREM);
   //resMgr->addReservation("Harper",  2021, 5, 12,  1, C_PREM);
   //resMgr->addReservation("Harper",  2021, 5, 12,  1, C_REG);

@@ -15,7 +15,7 @@ Reservation::Reservation(Guest* a,Room* b,Date* arr,int s){
 
 Reservation::~Reservation(){
 	cout<<"Reservation is destroyed"<<endl;
-	//delete da;
+	delete da;
 	//delete g;
 	//delete room;
 }
@@ -48,8 +48,8 @@ bool Reservation::lessThan(Reservation* l){
 
 void Reservation::print(){
 	cout<<"-- Guest: "<<g->getName()<<" :Room Number: "<<room->getRoom()<<" Arrival Date: ";
-	//Date *a=da;
-	da->print();
+	Date *a=da;
+	a->print();
 	cout<<"; stay:"<<stay<<"; total: $"<<charge<<endl;
 }
 

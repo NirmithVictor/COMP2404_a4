@@ -115,12 +115,13 @@ void ResManager::setHotel(Hotel* a){
 void ResManager::addReservation(string name, int yr, int mth, int day, int stay, ReqRoomType req){
 
 	if(stay<31){
-		cout<<name<<endl;
-		cout<<endl;
-		cout<<endl;
+		//cout<<name<<endl;
+		//cout<<endl;
+		//cout<<endl;
 		//cout<<req;
 		//temporary string for cross referenceing it
 		Date* d=new Date(day,mth,yr);
+		Date t(*d);
 		string a;
 		if(req==0){
 			//cout<<"Regular\n";
@@ -139,31 +140,60 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		int count=0;
 		Room *r=NULL;
 		Guest* g=NULL;
+		Reservation *re=NULL;
 		for(int i=0;i<h->getRooms().getSize();i++){
 			if(a==h->getRooms().get(i)->getType()){
 				//h->getRooms().get(i)->print();
-				if(numRes==0){
+				if(numRes<1){
 				//empty reservation collection
 					if(h->findGuest(name,&g)){
 						r=h->getRooms().get(i);
+						re=new Reservation(g,r,d,stay);
 					}
 				}
 				else{
+				//cout<<numRes<<endl;
 				//checking if the days are booked or not 
+					if(h->findGuest(name,&g)){
+						//cout<<"NAME" <<endl;
+						for(int j=0;j<numRes;j++){
+							//res[j]->print();
+							//cout<<"here"<<endl;
+							Date *a=res[j]->getDate();
+							//a->print();
+							//t.print();
+							//cout<<endl;
+							//cout<<res[j]->getDate()<<endl;;
+							if(!(a->equals(t))||(t.lessThan(*a))){
+								//cout<<"True"<<endl;
+								r=h->getRooms().get(i);
+								//r->print();
+								re=new Reservation(g,r,d,stay);
+							}
+							//delete a;
+						}
+						//if(r!=NULL){
+							//cout<<"YEY"<<endl;
+							//r->print();
+						//}
+					}
+					
 				}
 			}
 		}
-		if(r!=NULL && g!=NULL && d!=NULL){
-			r->print();
-			g->print();
-			d->print();
-			cout<<endl;
+		if(re!=NULL  && g!=NULL && r!=NULL){
+			//re->print();
+			res[numRes]=re;
+			//g->print();
+			numRes++;
+			//d->print();
+			//cout<<endl;
 		}else{
 			cout<<"GUEST "<< name <<" DOES NOT EXIST IN FILE"<<endl;
 		}
-		delete d;
-		
-		
+		//delete d;
+		//delete r;
+		//delete g;
 	}
 	else{
 		cout<<"Guest: "<< name <<" couldn't be created due to excessive stay days"<<endl;

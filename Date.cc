@@ -47,6 +47,9 @@ bool Date::equals(Date& d){
 	if(!lessThan(d)){
 		return true;
 	}
+	else if(d.day==day && d.month==month && d.year==year){
+		return true;
+	}
 	else{
 		return false;
 	}
