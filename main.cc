@@ -45,7 +45,7 @@ int main()
   cout<<endl;
   resMgr->setHotel(hotel);
   resMgr->addReservation("Ben",     2021, 5, 11,  4, C_PREM);
-  //resMgr->addReservation("Juliet",  2021, 5, 10,  3, C_PREM);
+  resMgr->addReservation("Juliet",  2021, 5, 10,  3, C_PREM);
   //resMgr->addReservation("Horace",  2021, 5, 28, 10, C_PREM);
   //resMgr->addReservation("Aimee",   2021, 5, 28,  8, C_PREM);
   //resMgr->addReservation("Sophie",  2021, 5, 28,  8, C_PREM);
@@ -53,7 +53,7 @@ int main()
   //resMgr->addReservation("Harper",  2021, 5, 12,  1, C_REG);
   //resMgr->addReservation("Ethan",   2021, 5,  8,  7, C_REG);
   //resMgr->addReservation("Ethan",   2021, 5, 28, 10, C_REG);
-  //resMgr->addReservation("Timmy",   2021, 5, 28,  8, C_REG);
+  resMgr->addReservation("Timmy",   2021, 5, 28,  8, C_REG);
   //resMgr->addReservation("Horace",  2021, 5, 25,  2, C_REG);
   //resMgr->addReservation("Goodwin", 2021, 5, 25, 12, C_REG);
   //resMgr->addReservation("Ben",     2021, 5, 27,  5, C_REG);

@@ -41,34 +41,7 @@ void ResManager::setHotel(Hotel* a){
 					cout<<endl;
 					return;	
 				}*/
-
-void ResManager::addReservation(string name, int yr, int mth, int day, int stay, ReqRoomType req){
-
-	if(stay<31){
-		cout<<name<<endl;
-		cout<<endl;
-		cout<<endl;
-		//cout<<req;
-		//temporary string for cross referenceing it
-		string a;
-		if(req==0){
-			//cout<<"Regular\n";
-			a = "Regular";
-		}
-		else if(req==1){
-			//cout<<"Premium\n";
-			a = "Premium";
-		}
-		else if(req==2){
-			//cout<<"Suite\n";
-			a = "Suite";
-		}
-		//cout<<a<<endl;
-		//h->getRooms().print();
-		int count=0;
-		Date* d=new Date(day,mth,yr);
-		for(int i=0;i<h->getRooms().getSize();i++){
-			if(h->getRooms().get(i)->getType()==a){
+/*if(h->getRooms().get(i)->getType()==a){
 		//		cout<<"FOUND TYPE"<<endl;
 				if(numRes<1){
 					Guest *g;
@@ -131,13 +104,62 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 							//cout<<day<<"-"<<mth<<"-"<<yr<<" are booked."<<endl;
 						}
 						cout<<endl;
-					}*/
+					}
 					//for(int i=0;i<numRes;i++){
 						
 					}
 				}
 		
+			}*/
+
+void ResManager::addReservation(string name, int yr, int mth, int day, int stay, ReqRoomType req){
+
+	if(stay<31){
+		cout<<name<<endl;
+		cout<<endl;
+		cout<<endl;
+		//cout<<req;
+		//temporary string for cross referenceing it
+		Date* d=new Date(day,mth,yr);
+		string a;
+		if(req==0){
+			//cout<<"Regular\n";
+			a = "Regular";
+		}
+		else if(req==1){
+			//cout<<"Premium\n";
+			a = "Premium";
+		}
+		else if(req==2){
+			//cout<<"Suite\n";
+			a = "Suite";
+		}
+		//cout<<a<<endl;
+		//h->getRooms().print();
+		int count=0;
+		Room *r=NULL;
+		Guest* g=NULL;
+		for(int i=0;i<h->getRooms().getSize();i++){
+			if(a==h->getRooms().get(i)->getType()){
+				//h->getRooms().get(i)->print();
+				if(numRes==0){
+				//empty reservation collection
+					if(h->findGuest(name,&g)){
+						r=h->getRooms().get(i);
+					}
+				}
+				else{
+				//checking if the days are booked or not 
+				}
 			}
+		}
+		if(r!=NULL && g!=NULL && d!=NULL){
+			r->print();
+			g->print();
+			d->print();
+			cout<<endl;
+		}else{
+			cout<<"GUEST "<< name <<" DOES NOT EXIST IN FILE"<<endl;
 		}
 		delete d;
 		
