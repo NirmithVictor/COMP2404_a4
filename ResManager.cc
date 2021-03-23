@@ -72,7 +72,10 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 							//res[j]->print();
 							//cout<<"here"<<endl;
 							Date *a=res[j]->getDate();
-							if((!(a->equals(t))||(t.lessThan(*a)))  ){
+							//Room *r1=res[j]->getRoom();
+							// && h->getRooms().get(i)->getRoom()!= r1->getRoom()
+							//res[j]->getRoom()->print();
+							if((!(a->equals(t))||(t.lessThan(*a)))){
 								//cout<<"True"<<endl;
 								r=h->getRooms().get(i);
 								//r->print();
@@ -112,7 +115,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 			cout<<"  GUEST "<< name <<" DOES NOT EXIST IN FILE"<<endl;
 		}
 		else if(r==NULL){
-			cout<<"  ROOM IS BOOKED"<<endl;
+			cout<<name<<"  ROOM IS BOOKED"<<endl;
 		}
 		//delete d;
 		//delete r;
