@@ -3,7 +3,7 @@
 
 #include "ResManager.h"
 #include "Hotel.h"
-
+#include "View.h"
 #include "StayRecorder.h"
 #include "GuestRecorder.h"
 #include "UpgradeRecorder.h"
@@ -17,6 +17,7 @@ class Control
 	private:
 		ResManager* resMgr;
 		Hotel* hotel;
+		//View v;
 		StayRecorder *s;
 		UpgradeRecorder *u;
 		GuestRecorder *ga;

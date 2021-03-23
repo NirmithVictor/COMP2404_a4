@@ -32,16 +32,38 @@ Control::~Control(){
 
 void Control::launch(){
 	initHotel();
-	cout<<"\nGUESTS"<<endl;
-	hotel->printGuest();
-	cout<<"\nTHE ROOMS\n";
-	hotel->printRooms();
-	cout<<"\nSTAY RECORDS\n";
-	s->printRecords();
-	cout<<"\nGUEST RECORDS\n";
-	ga->printRecords();
-	cout<<"\nSTAY RECORDS\n";
-	u->printRecords();
+	int p=1;
+	View v;
+	//.showMenu();
+	while(true){
+		v.showMenu(p);
+		if(p==1){
+			cout<<"\nRESERVATIONs\n";
+			resMgr->print();
+		}
+		else if(p==2){
+			cout<<"\nROOM INFORMATION\n";
+			hotel->printRooms();
+		}
+		else if(p==3){
+			cout<<"\nGUESTS"<<endl;
+			hotel->printGuest();
+		}
+		else if(p==4){
+			cout<<"\nSTAY RECORDS\n";
+			s->printRecords();
+			cout<<"\nGUEST RECORDS\n";
+			ga->printRecords();
+			cout<<"\nSTAY RECORDS\n";
+			u->printRecords();
+		}
+		else if(p==0){
+			break;
+		}
+		else{
+			cout<<"INVALID INPUT\n";
+		}
+	}
 }
 
 void Control::initHotel()

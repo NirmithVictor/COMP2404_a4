@@ -17,9 +17,7 @@ ResManager::~ResManager(){
 	for(int i=0;i<numRes;i++){
 		delete res[i];
 	}
-	while(!records.empty()){
-		records.pop_back();
-	}
+
 	//delete h;
 }
 //
