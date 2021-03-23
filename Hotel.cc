@@ -7,13 +7,13 @@ using namespace std;
 #include "ResManager.h"
 //,ResManager* a
 Hotel::Hotel(string n,ResManager* r):Hname(n),g_count(0),re(r){
-	cout<<Hname<<endl;
+	cout<<Hname;
 }
 Hotel::~Hotel(){
-	cout<<Hname<<" destroyed"<<endl;
+	//cout<<Hname<<" destroyed"<<endl;
 	//dealloacte the the guest array details
 	for(int i=0;i<g_count;i++){
-		cout<<arrGuest[i]->getName()<<" destroyed"<<endl;
+		//cout<<arrGuest[i]->getName()<<" destroyed"<<endl;
 		delete arrGuest[i];
 	}
 	//delete re;

@@ -46,9 +46,15 @@ int main()
   hotel->addRoom(new Room(C_REG, 218, 200));
   //hotel->getRooms().get(1)->print();
   //hotel->printRooms();
-  cout<<endl;
+  //cout<<endl;
   resMgr->setHotel(hotel);
-  /*resMgr->addReservation("Ben",     2021, 5, 11,  4, C_PREM);
+  StayRecorder *s =new StayRecorder(" STAY RECORDER EVENTS");
+  UpgradeRecorder *u=new UpgradeRecorder(" UPGRADE RECORDER EVENTS");
+  GuestRecorder *ga=new GuestRecorder(" GUEST RECORDER EVENTS");
+  resMgr->subscribe(s);
+  resMgr->subscribe(u);
+  resMgr->subscribe(ga);
+  resMgr->addReservation("Ben",     2021, 5, 11,  4, C_PREM);
   resMgr->addReservation("Juliet",  2021, 5, 10,  3, C_PREM);
   resMgr->addReservation("Horace",  2021, 5, 28, 10, C_PREM);
   resMgr->addReservation("Aimee",   2021, 5, 28,  8, C_PREM);
@@ -64,9 +70,19 @@ int main()
   resMgr->addReservation("Harper",  2021, 5, 29,  2, C_SUITE);
   resMgr->addReservation("Juliet",  2021, 5, 30,  1, C_SUITE);
   resMgr->print();
-  */cout<<endl<<"GUESTS AND THEIR POINTS"<<endl;
+  cout<<endl<<"GUESTS AND THEIR POINTS"<<endl;
   hotel->printGuest();
   cout<<endl;
+  cout<<"STAY TESTER"<<endl;
+  s->printRecords();
+  cout<<endl<<"GUEST TESTER"<<endl;
+  ga->printRecords();
+  cout<<endl<<"UPGRADE TESTER"<<endl;
+  u->printRecords();
+
+  delete s;
+  delete u;
+  delete ga;
   delete resMgr;
   delete hotel;
   /**/

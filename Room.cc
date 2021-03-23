@@ -9,7 +9,7 @@ Room::Room(ReqRoomType a, int b,float c):type(a),roomN(b),rate(c){
 }
 
 Room::~Room(){
-	cout<<type<<" "<<roomN<<" destroyed"<<endl;
+	//cout<<type<<" "<<roomN<<" destroyed"<<endl;
 }
 
 string Room::getType(){

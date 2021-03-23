@@ -18,7 +18,6 @@ ResManager::~ResManager(){
 		delete res[i];
 	}
 	//delete h;
-	//do we need to delete the vector array seems real sus tbh
 }
 //
 void ResManager::setHotel(Hotel* a){
@@ -56,6 +55,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 					if(h->findGuest(name,&g)){
 						r=h->getRooms().get(i);
 						re=new Reservation(g,r,d,stay);
+						//delete r;
 						break;
 					}
 				}
@@ -88,16 +88,16 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		}
 		if(re!=NULL  && g!=NULL && r!=NULL){
 			//re->print();
+			notify(re);
 			res[numRes]=re;
 			//g->print();
 			numRes++;
 			int a;
 			re->getRoom()->computePoints(a);
-			cout<<a<<endl;
+			//cout<<a<<endl;
 			re->getGuest()->addPts(a);
-			notify(re);
 		}else if(g==NULL){
-			cout<<"GUEST "<< name <<" DOES NOT EXIST IN FILE"<<endl;
+			cout<<"  GUEST "<< name <<" DOES NOT EXIST IN FILE";
 		}
 		else if(r==NULL){
 			cout<<"ROOM IS BOOKED"<<endl;
@@ -107,7 +107,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 		//delete g;
 	}
 	else{
-		cout<<"Guest: "<< name <<" couldn't be created due to excessive stay days"<<endl;
+		cout<<"Guest: "<< name <<" couldn't be created due to excessive stay days";
 		return;
 	}
 	cout<<endl;
@@ -137,6 +137,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 
 void ResManager::subscribe(Recorder* a){
 	records.push_back(a);
+	cout<<records.size()<<endl;
 }
 
 void ResManager::print(){
@@ -152,102 +153,12 @@ void ResManager::printRecords(){
 }
 
 void ResManager::notify(Reservation* a){
-//a->print();
+	//a->print();
+	//a->print();
+	//cout<<records.size();
 	for(int i=0;i<records.size();i++){
+	//	cout<<"IT IS ADDED"<<endl;
 		records[i]->update(a);
 	}
 }
-
-
-//cout<<"SATISFIED TEST"<<endl;
-				//maieh->getRooms().get(i)->print();
-				//room must be available on these days if no do not create a reservation
-				/*Guest *g;
-				if(h->findGuest(name,&g)){
-					g->print();
-					count=1;
-					//res[numRes]=new Reservation(g,h->getRooms().get(i),d,stay);
-					//numRes++;
-					//cout<<endl;
-				}
-				else{
-					cout<<endl;
-					return;	
-				}*/
-/*if(h->getRooms().get(i)->getType()==a){
-		//		cout<<"FOUND TYPE"<<endl;
-				if(numRes<1){
-					Guest *g;
-					if(h->findGuest(name,&g)){
-						cout<<name<<" FOUND"<<endl;
-						Reservation* r=new Reservation(g,h->getRooms().get(i),d,stay);
-						res[numRes]=r;
-						numRes++;
-						
-						res[0]->getDate()->print();
-						cout<<endl;
-						r->print();
-						notify(r);
-					}
-					//check if guests name is name the hotel guest collection if yes then dynamically allocate the Reservation object with guest, room, date and stay;
-					//push into the reservation collection
-					//calculate accumulated points for the guest so like compute points in the room class and then do the addPts function in guest
-					//notify function call I think
-				}
-		//		else{
-		//		check if the name of guest is in the hotel guest collection if yes then we proceed to check if the day is occupied or not in the reservation 
-		//			for(int i=0;i<numRes;i++){				
-						//if not occupied dynamically allocate the reservation pointer and push into the reservation collection
-						//calculate accumulated points for the guest so like compute points in the room class and then do the addPts function in guest
-						//notify function call I think
-		//			}
-		//		}
-				else{
-					//cout<<"IN TESTING PROGRESS"<<endl;
-					Guest *g;
-					if(h->findGuest(name,&g)){
-						//cout<<"Original Date: ";
-						d->print();
-						cout<<endl;
-						cout<<name<<" EXISTS"<<endl;
-						Date t(*d);
-						int c;
-						for(int i=0;i<numRes;i++){
-							//cout<<"STAY: \n";
-							c=0;
-							//int k=1;
-							for(int j=1;j<=stay;j++){
-								//check date in the reservation collection and see if any of it is occupied if not then we add to it else do not add
-								//c++;
-								t.add(1);
-								if(&t!=res[i]->getDate()){
-									//cout<<"YAY"<<endl;
-									c++;
-								}
-							}
-							
-						}
-						/*if(c==stay){
-							//then we push it into the res collection and increment numRes
-							Reservation* r=new Reservation(g,h->getRooms().get(i),d,stay);
-							res[numRes]=r;
-							numRes++;
-							//cout<<"Yes"<<endl;
-						}else{
-							//cout<<day<<"-"<<mth<<"-"<<yr<<" are booked."<<endl;
-						}
-						cout<<endl;
-					}
-					//for(int i=0;i<numRes;i++){
-						
-					}
-				}
-		
-			}*/
-			//a->print();
-							//t.print();
-							//cout<<endl;
-							//cout<<res[j]->getDate()<<endl;;
-							//(res[j]->getRoom()!=h->getRooms().get(i)->getRoom())
-							//res[j]->getRoom()->print();
 

@@ -12,7 +12,7 @@ Date::Date(int d, int m, int y)
 
 Date::~Date()
 {
-  cout<<"in dtor "<<day<<endl;
+  //cout<<"in dtor "<<day<<endl;
 }
 Date::Date(Date& a){
 	setDate(a.day,a.month,a.year);
