@@ -60,6 +60,8 @@ int main()
   resMgr->addReservation("Harper",  2021, 5, 29,  2, C_SUITE);
   //resMgr->addReservation("Juliet",  2021, 5, 30,  1, C_SUITE);
   resMgr->print();
+  cout<<endl<<"GUESTS AND THEIR POINTS"<<endl;
+  hotel->printGuest();
   cout<<endl;
   delete resMgr;
   delete hotel;
