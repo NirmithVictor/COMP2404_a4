@@ -17,6 +17,9 @@ ResManager::~ResManager(){
 	for(int i=0;i<numRes;i++){
 		delete res[i];
 	}
+	while(!records.empty()){
+		records.pop_back();
+	}
 	//delete h;
 }
 //
@@ -57,6 +60,9 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 						re=new Reservation(g,r,d,stay);
 						//delete r;
 						break;
+					}else{
+						d=NULL;
+						break;
 					}
 				}
 				else{
@@ -86,6 +92,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 						
 					}
 					else{
+						d=NULL;
 						break;
 					}
 					
@@ -102,6 +109,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 			re->getRoom()->computePoints(a);
 			//cout<<a<<endl;
 			re->getGuest()->addPts(a);
+			
 		}else if(g==NULL){
 			cout<<"  GUEST "<< name <<" DOES NOT EXIST IN FILE"<<endl;
 		}

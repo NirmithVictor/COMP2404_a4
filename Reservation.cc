@@ -16,6 +16,8 @@ Reservation::Reservation(Guest* a,Room* b,Date* arr,int s){
 Reservation::~Reservation(){
 	//cout<<"Reservation is destroyed"<<endl;
 	delete da;
+	//room=NULL;
+	//g=NULL;
 	//delete g;
 	//if(g!=NULL){
 	//delete g;
