@@ -17,6 +17,9 @@ ResManager::~ResManager(){
 	for(int i=0;i<numRes;i++){
 		delete res[i];
 	}
+	if(h!=NULL){
+		//delete h;
+	}
 	//delete h;
 	//do we need to delete the vector array seems real sus tbh
 }
@@ -149,6 +152,7 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 					if(h->findGuest(name,&g)){
 						r=h->getRooms().get(i);
 						re=new Reservation(g,r,d,stay);
+						break;
 					}
 				}
 				else{
@@ -164,11 +168,14 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 							//t.print();
 							//cout<<endl;
 							//cout<<res[j]->getDate()<<endl;;
-							if(!(a->equals(t))||(t.lessThan(*a))){
+							//(res[j]->getRoom()!=h->getRooms().get(i)->getRoom())
+							//cout<<res[j]->getRoom()->getRoom()<<endl;
+							if((!(a->equals(t))||(t.lessThan(*a)))  ){
 								//cout<<"True"<<endl;
 								r=h->getRooms().get(i);
 								//r->print();
 								re=new Reservation(g,r,d,stay);
+								//break;
 							}
 							//delete a;
 						}
@@ -176,6 +183,9 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 							//cout<<"YEY"<<endl;
 							//r->print();
 						//}
+					}
+					else{
+					break;
 					}
 					
 				}
@@ -187,9 +197,13 @@ void ResManager::addReservation(string name, int yr, int mth, int day, int stay,
 			//g->print();
 			numRes++;
 			//d->print();
+			//delete re;
 			//cout<<endl;
-		}else{
+		}else if(g==NULL){
 			cout<<"GUEST "<< name <<" DOES NOT EXIST IN FILE"<<endl;
+		}
+		else if(r==NULL){
+			cout<<"ROOM IS BOOKED"<<endl;
 		}
 		//delete d;
 		//delete r;
